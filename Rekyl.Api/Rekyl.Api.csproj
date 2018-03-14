@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Rekyl.io</PackageId>
+    <PackageVersion>0.1.0</PackageVersion>
+    <Authors>Fredrik Löwenhamn</Authors>
+    <Description>Framework to create web apps with GraphQL and RethinkDb. Core library</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright>Copyright 2018 (c) Fredrik Löwenhamn. All rights reserved.</Copyright>
+    <PackageTags>graphql rethinkdb</PackageTags>
+    <PackageProjectUrl>https://github.com/rekylio/rekyl</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rekyl.Core\Rekyl.Core.csproj" />
+  </ItemGroup>
+
+</Project>

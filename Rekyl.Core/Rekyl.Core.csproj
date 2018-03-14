@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GraphQL.Conventions" Version="1.3.9" />
+    <PackageReference Include="RethinkDb.Driver" Version="2.3.15" />
+  </ItemGroup>
+
+</Project>
