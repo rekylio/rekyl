@@ -5,12 +5,12 @@ using GraphQL.Conventions;
 using GraphQLParser;
 using GraphQLParser.AST;
 using Newtonsoft.Json.Linq;
-using Rekyl.Core.Database;
-using Rekyl.Core.Schema;
-using Rekyl.Core.Schema.Types;
+using Rekyl.Database;
+using Rekyl.Schema;
+using Rekyl.Schema.Types;
 using RethinkDb.Driver.Ast;
 
-namespace Rekyl.Core
+namespace Rekyl
 {
     public class UserContext : IUserContext, IDataLoaderContextProvider
     {

@@ -6,7 +6,7 @@ using System.Net.Sockets;
 using RethinkDb.Driver;
 using RethinkDb.Driver.Net.Clustering;
 
-namespace Rekyl.Core.Database
+namespace Rekyl.Database
 {
     public partial class DbContext
     {

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net;
 using GraphQL.Conventions;
 
-namespace Rekyl.Api.Handlers
+namespace Rekyl.Handlers
 {
     public abstract class DefaultImageHandler : SpecialHandler
     {

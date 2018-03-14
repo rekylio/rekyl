@@ -7,10 +7,10 @@ using GraphQL;
 using GraphQL.Conventions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Rekyl.Core.Attributes;
-using Rekyl.Core.Schema.Types;
+using Rekyl.Attributes;
+using Rekyl.Schema.Types;
 
-namespace Rekyl.Core.Schema
+namespace Rekyl.Schema
 {
     public static class Utils
     {

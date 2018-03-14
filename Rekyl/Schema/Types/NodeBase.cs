@@ -1,9 +1,9 @@
 ﻿using GraphQL.Conventions;
 using GraphQL.Conventions.Relay;
 using Newtonsoft.Json;
-using Rekyl.Core.Schema.Converters;
+using Rekyl.Schema.Converters;
 
-namespace Rekyl.Core.Schema.Types
+namespace Rekyl.Schema.Types
 {
     public abstract class NodeBase<T> : NodeBase
     {

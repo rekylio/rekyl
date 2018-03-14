@@ -2,7 +2,7 @@
 using System.Reflection;
 using GraphQL.Conventions;
 
-namespace Rekyl.Core
+namespace Rekyl
 {
     public class DependencyInjector : IDependencyInjector
     {

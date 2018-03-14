@@ -6,12 +6,12 @@ using GraphQL.Conventions;
 using GraphQLParser.AST;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Rekyl.Core.Attributes;
-using Rekyl.Core.Schema;
+using Rekyl.Attributes;
+using Rekyl.Schema;
 using RethinkDb.Driver.Ast;
 using RethinkDb.Driver.Model;
 
-namespace Rekyl.Core.Database
+namespace Rekyl.Database
 {
     public partial class DbContext
     {

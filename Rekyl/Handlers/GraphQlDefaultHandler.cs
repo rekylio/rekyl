@@ -7,10 +7,9 @@ using System.Reflection;
 using GraphQL;
 using GraphQL.Conventions.Relay;
 using GraphQL.Conventions.Web;
-using Rekyl.Core;
-using Rekyl.Core.Schema;
+using Rekyl.Schema;
 
-namespace Rekyl.Api.Handlers
+namespace Rekyl.Handlers
 {
     public class GraphQlDefaultHandler : SpecialHandler
     {

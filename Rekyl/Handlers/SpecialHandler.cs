@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Rekyl.Api.Handlers
+namespace Rekyl.Handlers
 {
     public abstract class SpecialHandler
     {

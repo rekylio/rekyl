@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Rekyl.Core.Schema.Converters
+namespace Rekyl.Schema.Converters
 {
     internal class IdConverter : JsonConverter
     {

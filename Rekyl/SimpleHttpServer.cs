@@ -4,11 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
-using Rekyl.Api.Handlers;
-using Rekyl.Core;
-using Rekyl.Core.Database;
+using Rekyl.Database;
+using Rekyl.Handlers;
 
-namespace Rekyl.Api
+namespace Rekyl
 {
     public class SimpleHttpServer
     {

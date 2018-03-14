@@ -1,4 +1,4 @@
-﻿namespace Rekyl.Core.Database
+﻿namespace Rekyl.Database
 {
     public class DatabaseName
     {

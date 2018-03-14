@@ -2,5 +2,5 @@ pipeline:
   core:
     image: lowet84/aspnetcore-builder
     commands:
-      - sh publish.sh Rekyl.Api $API_KEY Rekyl.io
+      - sh publish.sh Rekyl $API_KEY Rekyl.io
     secrets: [ api_key ]

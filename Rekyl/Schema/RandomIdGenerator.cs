@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Rekyl.Core.Schema
+namespace Rekyl.Schema
 {
     public static class RandomIdGenerator
     {

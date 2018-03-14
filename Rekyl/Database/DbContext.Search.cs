@@ -1,11 +1,11 @@
 ﻿using System;
 using GraphQLParser.AST;
 using Newtonsoft.Json.Linq;
-using Rekyl.Core.Schema;
-using Rekyl.Core.Schema.Types;
+using Rekyl.Schema;
+using Rekyl.Schema.Types;
 using RethinkDb.Driver.Ast;
 
-namespace Rekyl.Core.Database
+namespace Rekyl.Database
 {
     public partial class DbContext
     {

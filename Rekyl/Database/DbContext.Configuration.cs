@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Rekyl.Core.Attributes;
-using Rekyl.Core.Schema;
+using Rekyl.Attributes;
+using Rekyl.Schema;
 
-namespace Rekyl.Core.Database
+namespace Rekyl.Database
 {
     public partial class DbContext
     {
