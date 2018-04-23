@@ -58,7 +58,7 @@ namespace Rekyl.Handlers
             return attributeOperationType == operationType;
         }
 
-        public virtual UserContext GetUserContext(string body)
+        public virtual UserContext GetUserContext(string body, HttpListenerContext context)
         {
             return new DefaultUserContext(body);
         }
@@ -81,7 +81,7 @@ namespace Rekyl.Handlers
 
             var streamReader = new StreamReader(context.Request.InputStream);
             var body = streamReader.ReadToEnd();
-            var userContext = GetUserContext(body);
+            var userContext = GetUserContext(body, context);
             var result = _requestHandler
                 .ProcessRequest(Request.New(body), userContext).Result;
             context.Response.Headers.Add("Content-Type", "application/json; charset=utf-8");
