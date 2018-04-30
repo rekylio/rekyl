@@ -9,11 +9,13 @@ namespace Rekyl.Database
 {
     public partial class DbContext
     {
+        public static Assembly OverrrideAssembly { get; set; }
+
         private static IEnumerable<TableInfo> DefaultTypes =>
             UsesDefaultDbReadTypes
             .Select(type => new TableInfo(type.GetCustomAttribute<TableAttribute>()?.TableName ?? type.Name, GetSecondaryIndexes(type)));
 
-        private static IEnumerable<Type> UsesDefaultDbReadTypes => Assembly.GetEntryAssembly()
+        private static IEnumerable<Type> UsesDefaultDbReadTypes => (OverrrideAssembly ?? Assembly.GetEntryAssembly())
             .GetTypes()
             .Where(type => type.UsesDefaultDbRead());
 

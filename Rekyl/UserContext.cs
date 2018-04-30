@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using GraphQL.Conventions;
@@ -180,6 +181,11 @@ namespace Rekyl
             // ### DANGER!!!!! ###
             // This will delete your database
             DbContext.Instance.Reset();
+        }
+
+        public static void SetOverrideAssembly(Assembly assembly)
+        {
+            DbContext.OverrrideAssembly = assembly;
         }
     }
 
