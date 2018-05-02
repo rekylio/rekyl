@@ -20,7 +20,8 @@ namespace Rekyl
         public enum ReadType
         {
             WithDocument,
-            Shallow
+            Shallow,
+            Full
         }
 
         public static void InitDb(DatabaseUrl databaseUrl, DatabaseName databaseName)
@@ -72,6 +73,11 @@ namespace Rekyl
         public static T GetShallow<T>(Id id) where T : class
         {
             return new UserContext().Get<T>(id, ReadType.Shallow);
+        }
+
+        public static T GetFull<T>(Id id) where T : class
+        {
+            return new UserContext().Get<T>(id, ReadType.Full);
         }
 
         private T Get<T>(Id id, ReadType readType) where T : class

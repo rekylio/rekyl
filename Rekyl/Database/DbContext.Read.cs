@@ -53,17 +53,33 @@ namespace Rekyl.Database
             }
         }
 
-        private JArray GetFromDb<T>(Id[] ids, MapObject hashMap)
+        private T GetFull<T>(Id id) where T : class
         {
-            var importTree = GetImportTree(typeof(T), hashMap, null);
-            var idStrings = ids.Select(d => d.ToString()).ToArray();
-            var table = GetTable(typeof(T));
-            ReqlExpr get = table.GetAll(R.Args(idStrings));
-            get = get.Map(item => Merge(item, importTree));
-            get = get.Map(item => item.Pluck(hashMap));
-            var result = get.CoerceTo("ARRAY").Run(_connection) as JArray;
-            return result;
+            try
+            {
+                var result = GetFromDbFull<T>(id);
+
+                var ret = Utils.DeserializeObject(typeof(T), result);
+                return ret as T;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
+
+
+        //private JArray GetFromDb<T>(Id[] ids, MapObject hashMap)
+        //{
+        //    var importTree = GetImportTree(typeof(T), hashMap, null);
+        //    var idStrings = ids.Select(d => d.ToString()).ToArray();
+        //    var table = GetTable(typeof(T));
+        //    ReqlExpr get = table.GetAll(R.Args(idStrings));
+        //    get = get.Map(item => Merge(item, importTree));
+        //    get = get.Map(item => item.Pluck(hashMap));
+        //    var result = get.CoerceTo("ARRAY").Run(_connection) as JArray;
+        //    return result;
+        //}
 
         private JObject GetFromDb<T>(Id id, MapObject hashMap)
         {
@@ -73,6 +89,17 @@ namespace Rekyl.Database
                 .Get(id.ToString());
             get = Merge(get, importTree);
             get = get.Pluck(hashMap);
+            var result = get.Run(_connection) as JObject;
+            return result;
+        }
+
+        private JObject GetFromDbFull<T>(Id id)
+        {
+            var importTree = GetFullImportTree(typeof(T), null);
+            var table = GetTable(typeof(T));
+            ReqlExpr get = table
+                .Get(id.ToString());
+            get = Merge(get, importTree);
             var result = get.Run(_connection) as JObject;
             return result;
         }
@@ -180,6 +207,22 @@ namespace Rekyl.Database
             }).Where(d => d.HashMap != null).ToList();
             var importItems = properties
                 .Select(d => GetImportTree(d.Property.PropertyType, d.HashMap, d.Property.Name)).ToList();
+            var ret = new ImportTreeItem(
+                GetTable(type),
+                rootProperty,
+                unsafeType.IsArray,
+                type.IsNodeBase(),
+                importItems
+            );
+            return ret;
+        }
+
+        private ImportTreeItem GetFullImportTree(Type unsafeType, string rootProperty)
+        {
+            var type = GetTypeIfArray(unsafeType);
+
+            var importItems = type.GetProperties()
+                .Select(d => GetFullImportTree(d.PropertyType, d.Name)).ToList();
             var ret = new ImportTreeItem(
                 GetTable(type),
                 rootProperty,

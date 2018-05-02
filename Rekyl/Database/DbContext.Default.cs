@@ -62,6 +62,8 @@ namespace Rekyl.Database
                     return GetWithDocument<T>(selectionSet, id);
                 case UserContext.ReadType.Shallow:
                     return GetShallow<T>(id);
+                case UserContext.ReadType.Full:
+                    return GetFull<T>(id);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(readType), readType, null);
             }

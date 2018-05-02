@@ -19,12 +19,12 @@ namespace Rekyl.Test
             UserContext.Reset();
             var test3 = new Test3();
             var test2 = new Test2(test3);
-            var test1 = new Test1(test2);
+            var test1 = new Test1(new[] { test2 }, new[] { "a", "b" }, "sdfli", 0);
             UserContext.AddDefault(test3);
             UserContext.AddDefault(test2);
             UserContext.AddDefault(test1);
             var context = new TestContext("query{test1{test2{test3{id}}}}");
-            var data = context.GetAll<Test1>();
+            var data = UserContext.GetFull<Test1>(test1.Id);
         }
     }
 
