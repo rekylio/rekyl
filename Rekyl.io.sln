@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rekyl", "Rekyl\Rekyl.csproj", "{7FD6BD97-6D45-43D7-970C-4D4E4457FC61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rekyl.Test", "Rekyl.Test\Rekyl.Test.csproj", "{30FD7001-BC09-4BE0-AD6E-8067F4D84D15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rekyl.Test", "Rekyl.Test\Rekyl.Test.csproj", "{30FD7001-BC09-4BE0-AD6E-8067F4D84D15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rekyl.Console", "Rekyl.Console\Rekyl.Console.csproj", "{828B377B-D527-4192-A9CB-A37954CEEF75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{30FD7001-BC09-4BE0-AD6E-8067F4D84D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30FD7001-BC09-4BE0-AD6E-8067F4D84D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30FD7001-BC09-4BE0-AD6E-8067F4D84D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{828B377B-D527-4192-A9CB-A37954CEEF75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828B377B-D527-4192-A9CB-A37954CEEF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828B377B-D527-4192-A9CB-A37954CEEF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828B377B-D527-4192-A9CB-A37954CEEF75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

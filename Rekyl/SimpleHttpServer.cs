@@ -78,6 +78,7 @@ namespace Rekyl
             if (path == "/") path = indexDefault;
             var pathParts = new[] { ".", "static" }.Concat(path.Split('/')).Where(d => !string.IsNullOrEmpty(d)).ToArray();
             var filename = Path.Combine(pathParts);
+            filename = filename.Split('?')[0];
             if (File.Exists(filename))
             {
                 try

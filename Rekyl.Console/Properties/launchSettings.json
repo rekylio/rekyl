@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Rekyl.Console": {
+      "commandName": "Project",
+      "workingDirectory": "."
+    }
+  }
+}
